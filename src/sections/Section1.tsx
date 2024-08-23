@@ -32,7 +32,6 @@ const Section1 = () => {
 
 export default Section1;
 
-// Styled Components
 const Container = styled.div`
   background-image: url("/images/pngs/배경.png");
   background-size: cover;
