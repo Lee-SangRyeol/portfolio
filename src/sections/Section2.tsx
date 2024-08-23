@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import { colors } from "../constants/index";
 
+interface SkillToolsIconProps {
+  imageUrl: string;
+}
+
 const Section2 = () => {
   return (
     <Container>
-      <Section2TopTitle>About Me</Section2TopTitle>
+      <TopTitle>About Me</TopTitle>
       <IntroduceContainer>
         <Memoticon />
         <IntroduceTextBox>
@@ -61,6 +65,66 @@ const Section2 = () => {
       </InterviewContainer>
       <SkillToolsContainer>
         <SectionTitle>Skill {"&"} Tools</SectionTitle>
+        <SkillToolsArea>
+          <div>
+            <SkillToolsTitle>FrontEnd</SkillToolsTitle>
+            <SkillToolsBox>
+              <SkillToolsBody>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/react.webp"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>React</SkillToolsText>
+                </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/next.png"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>next.js</SkillToolsText>
+                </SkillToolsDetailBox>
+              </SkillToolsBody>
+            </SkillToolsBox>
+          </div>
+
+          <div>
+            <SkillToolsTitle>BackEnd</SkillToolsTitle>
+            <SkillToolsBox>
+              <SkillToolsBody>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/nodejs.png"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>node.js</SkillToolsText>
+                </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/express.png"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>express</SkillToolsText>
+                </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/graphQL.png"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>graphQL</SkillToolsText>
+                </SkillToolsDetailBox>
+              </SkillToolsBody>
+            </SkillToolsBox>
+          </div>
+
+          <div>
+            <SkillToolsTitle>DateBase</SkillToolsTitle>
+            <SkillToolsBox>
+              <SkillToolsBody>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/mysql.png"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>MySql</SkillToolsText>
+                </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon imageUrl="/images/icon/1175139.webp"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>MongoDB</SkillToolsText>
+                </SkillToolsDetailBox>
+              </SkillToolsBody>
+            </SkillToolsBox>
+          </div>
+        </SkillToolsArea>
       </SkillToolsContainer>
     </Container>
   );
@@ -68,16 +132,15 @@ const Section2 = () => {
 
 export default Section2;
 
-// Styled Components
 const Container = styled.div`
   background-color: ${colors.grayscale.$01};
   width: 100%;
-  padding: 40px 40px 0px 40px;
+  padding: 40px 80px 0px 80px;
   position: relative;
-  height: 200vh;
+  height: 210vh;
 `;
 
-const Section2TopTitle = styled.div`
+const TopTitle = styled.div`
   color: ${colors.secondary.white};
   font-size: 58px;
   font-weight: 900;
@@ -122,7 +185,8 @@ const SectionTitle = styled.div`
 `;
 
 const InterviewContainer = styled.div`
-  padding-left: 40px;
+  padding: 0px 120px;
+  margin-bottom: 120px;
 `;
 
 const InterviewBox = styled.div`
@@ -146,5 +210,75 @@ const InterviewAnswer = styled.div`
 `;
 
 const SkillToolsContainer = styled.div`
-  padding-left: 40px;
+  padding: 0px 120px;
+  position: relative;
+`;
+
+const SkillToolsArea = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+const SkillToolsTitle = styled.div`
+  color: ${colors.secondary.white};
+  margin-bottom: 30px;
+  font-size: 24px;
+  z-index: 2;
+  position: relative;
+  background-color: ${colors.grayscale.$01};
+  margin-top: -10px;
+  width: 120px;
+  height: 45px;
+`;
+
+const SkillToolsBox = styled.div`
+  border: 2px solid white;
+  position: relative;
+  z-index: 1;
+  width: 310px;
+  height: 180px;
+  margin-top: -65px;
+  margin-left: 5px;
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+`;
+
+const SkillToolsBody = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+`;
+
+const SkillToolsDetailBox = styled.div`
+  width: 85px;
+  height: 105px;
+  background-color: ${colors.secondary.black};
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const SkillToolsIcon = styled.div<SkillToolsIconProps>`
+  width: 60px;
+  height: 60px;
+  background-image: url(${(props) => props.imageUrl});
+  background-size: 60px 60px;
+  background-position: center;
+  background-repeat: no-repeat;
+`;
+
+const Dash = styled.div`
+  width: 65px;
+  height: 1px;
+  margin: 5px 0px;
+  background-color: ${colors.secondary.white};
+`;
+
+const SkillToolsText = styled.div`
+  color: ${colors.secondary.white};
+  font-size: 16px;
 `;

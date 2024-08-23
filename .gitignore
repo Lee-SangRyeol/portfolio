@@ -39,6 +39,3 @@ next-env.d.ts
 # package.json.lock
 package-lock.json
 
-#pwa
-sw.js*
-workbox-*
