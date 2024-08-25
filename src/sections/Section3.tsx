@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { colors } from "../constants/index";
-import Career from "../content/career";
+import Career from "../content/Career";
+import Education from "../content/Education";
 
 const Section3 = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -72,7 +73,7 @@ const Section3 = () => {
           id="career"
           className={activeSection === "career" ? "fade-in" : "fade-out"}
         >
-          <Career></Career>
+          <Career />
         </Section>
         <Section
           id="project"
@@ -84,8 +85,7 @@ const Section3 = () => {
           id="education"
           className={activeSection === "education" ? "fade-in" : "fade-out"}
         >
-          <GrayContainer>education</GrayContainer>
-          <GrayContainer>education</GrayContainer>
+          <Education />
         </Section>
       </Content>
     </Container>
