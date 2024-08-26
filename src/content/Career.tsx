@@ -68,9 +68,10 @@ const AllContainer = styled.div`
   background-color: ${colors.grayscale.$02};
   padding: 20px;
   border-radius: 5px;
-const TopContainer = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
 `;
 
