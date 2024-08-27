@@ -122,7 +122,7 @@ const Container = styled.div`
 `;
 
 const Sidebar = styled.div`
-  width: 200px;
+  width: 360px;
   height: 100vh;
   position: sticky;
   top: 35px;
@@ -147,10 +147,10 @@ const SidebarItem = styled.div<{ $active: boolean }>`
 
 const Content = styled.div`
   flex-grow: 1;
-  padding-left: 80px;
 `;
 
 const Section = styled.div`
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
