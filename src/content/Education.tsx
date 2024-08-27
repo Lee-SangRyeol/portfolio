@@ -27,20 +27,20 @@ const AllContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 600px;
+  height: 800px;
   position: relative;
 `;
 
 const ContainerWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: relative;
   gap: 30px;
 `;
 
 const ChildContainer = styled.div`
-  width: 300px;
-  height: 500px;
+  width: 700px;
+  height: 250px;
   flex-shrink: 0;
   display: flex;
   justify-content: center;
