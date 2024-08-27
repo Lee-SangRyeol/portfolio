@@ -14,8 +14,8 @@ const InhaTC = () => {
 export default InhaTC;
 
 const GreyContainer = styled.div`
-  width: 500px;
-  height: 550px;
+  width: 700px;
+  height: 250px;
   background-color: ${colors.grayscale.$02};
   padding: 20px;
   border-radius: 5px;
