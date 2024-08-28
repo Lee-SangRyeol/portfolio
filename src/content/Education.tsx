@@ -39,7 +39,7 @@ const ContainerWrapper = styled.div`
 `;
 
 const ChildContainer = styled.div`
-  width: 700px;
+  width: 550px;
   height: 250px;
   flex-shrink: 0;
   display: flex;
