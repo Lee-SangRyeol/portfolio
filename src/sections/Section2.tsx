@@ -117,7 +117,7 @@ const Section2 = () => {
                   <SkillToolsText>MySql</SkillToolsText>
                 </SkillToolsDetailBox>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/1175139.webp"></SkillToolsIcon>
+                  <SkillToolsIcon imageUrl="/images/icon/mongo.webp"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>MongoDB</SkillToolsText>
                 </SkillToolsDetailBox>

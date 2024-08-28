@@ -5,10 +5,13 @@ const Career = () => {
   return (
     <AllContainer>
       <DateText>2022.05 - 2023.07</DateText>
-      <CompanyBox>
-        <CompanyName>{"(주)"}에이락</CompanyName>
-        <Position>{"[ 개발팀 - 선임 ]"}</Position>
-      </CompanyBox>
+      <CompanyContainer>
+        <Icon imageUrl="/images/icon/alock.png" />
+        <CompanyBox>
+          <CompanyName>{"(주) 에이락"}</CompanyName>
+          <Position>{"[ 개발팀 - 선임 ]"}</Position>
+        </CompanyBox>
+      </CompanyContainer>
       <WorkList>
         회사소개
         <GrayText>
@@ -62,6 +65,10 @@ const Career = () => {
 
 export default Career;
 
+interface IconProps {
+  imageUrl: string;
+}
+
 const AllContainer = styled.div`
   width: 500px;
   height: 550px;
@@ -85,9 +92,27 @@ const DateText = styled.div`
   color: ${colors.grayscale.$07};
 `;
 
+const CompanyContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
+const Icon = styled.div<IconProps>`
+  width: 50px;
+  height: 50px;
+  background-image: url(${(props) => props.imageUrl});
+  background-size: 50px 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+  margin-left: -60px;
+`;
+
 const CompanyBox = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 7px;
 `;
 
