@@ -7,10 +7,26 @@ import Education from "../content/Education";
 const Section3 = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
+  // const scrollToSection = (sectionId: string) => {
+  //   const section = document.getElementById(sectionId);
+  //   if (section) {
+  //     section.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
+      if (sectionId === "education") {
+        const offset = section.getBoundingClientRect().top + window.scrollY;
+        const headerOffset = 100;
+        const offsetPosition = offset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      }
     }
   };
 
@@ -116,7 +132,7 @@ const fadeOut = keyframes`
 
 const Container = styled.div`
   width: 100%;
-  height: 322vh;
+  height: 522vh;
   display: flex;
   background-color: ${colors.grayscale.$01};
 `;
