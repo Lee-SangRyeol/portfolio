@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../constants/index";
 
 interface SkillToolsIconProps {
-  imageUrl: string;
+  $imageUrl: string;
 }
 
 const Section2 = () => {
@@ -71,12 +71,12 @@ const Section2 = () => {
             <SkillToolsBox>
               <SkillToolsBody>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/react.webp"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/react.webp"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>React</SkillToolsText>
                 </SkillToolsDetailBox>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/next.png"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/next.png"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>next.js</SkillToolsText>
                 </SkillToolsDetailBox>
@@ -89,17 +89,17 @@ const Section2 = () => {
             <SkillToolsBox>
               <SkillToolsBody>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/nodejs.png"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/nodejs.png"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>node.js</SkillToolsText>
                 </SkillToolsDetailBox>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/express.png"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/express.png"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>express</SkillToolsText>
                 </SkillToolsDetailBox>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/graphQL.png"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/graphQL.png"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>graphQL</SkillToolsText>
                 </SkillToolsDetailBox>
@@ -112,12 +112,12 @@ const Section2 = () => {
             <SkillToolsBox>
               <SkillToolsBody>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/mysql.png"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/mysql.png"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>MySql</SkillToolsText>
                 </SkillToolsDetailBox>
                 <SkillToolsDetailBox>
-                  <SkillToolsIcon imageUrl="/images/icon/mongo.webp"></SkillToolsIcon>
+                  <SkillToolsIcon $imageUrl="/images/icon/mongo.webp"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>MongoDB</SkillToolsText>
                 </SkillToolsDetailBox>
@@ -265,7 +265,7 @@ const SkillToolsDetailBox = styled.div`
 const SkillToolsIcon = styled.div<SkillToolsIconProps>`
   width: 60px;
   height: 60px;
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.$imageUrl});
   background-size: 60px 60px;
   background-position: center;
   background-repeat: no-repeat;
