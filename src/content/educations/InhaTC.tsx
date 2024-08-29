@@ -34,7 +34,7 @@ const InhaTC = () => {
         </TextUl>
       </GreyContainer>
       <IconBackGround>
-        <Icon imageUrl="/images/icon/inhatc.png" />
+        <Icon $imageUrl="/images/icon/inhatc.png" />
       </IconBackGround>
     </AllContainer>
   );

@@ -31,7 +31,7 @@ const AcademicCreditBank = () => {
         </TextUl>
       </GreyContainer>
       <IconBackGround>
-        <Icon imageUrl="/images/icon/acbs.png" />
+        <Icon $imageUrl="/images/icon/acbs.png" />
       </IconBackGround>
     </AllContainer>
   );

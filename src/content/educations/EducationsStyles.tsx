@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors, fonts } from "../../constants/index";
 
 interface IconProps {
-  imageUrl: string;
+  $imageUrl: string;
 }
 
 export const AllContainer = styled.div`
@@ -86,7 +86,7 @@ export const Icon = styled.div<IconProps>`
   width: 100px;
   height: 100px;
   padding: 10px;
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.$imageUrl});
   background-size: 80px 80px;
   background-position: center;
   background-repeat: no-repeat;

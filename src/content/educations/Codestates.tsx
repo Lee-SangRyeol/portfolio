@@ -35,7 +35,7 @@ const Codestates = () => {
         </TextUl>
       </GreyContainer>
       <IconBackGround>
-        <Icon imageUrl="/images/icon/co.png" />
+        <Icon $imageUrl="/images/icon/co.png" />
       </IconBackGround>
     </AllContainer>
   );

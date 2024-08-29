@@ -6,7 +6,7 @@ const Career = () => {
     <AllContainer>
       <DateText>2022.05 - 2023.07</DateText>
       <CompanyContainer>
-        <Icon imageUrl="/images/icon/alock.png" />
+        <Icon $imageUrl="/images/icon/alock.png" />
         <CompanyBox>
           <CompanyName>{"(주) 에이락"}</CompanyName>
           <Position>{"[ 개발팀 - 선임 ]"}</Position>
@@ -66,7 +66,7 @@ const Career = () => {
 export default Career;
 
 interface IconProps {
-  imageUrl: string;
+  $imageUrl: string;
 }
 
 const AllContainer = styled.div`
@@ -100,7 +100,7 @@ const CompanyContainer = styled.div`
 const Icon = styled.div<IconProps>`
   width: 50px;
   height: 50px;
-  background-image: url(${(props) => props.imageUrl});
+  background-image: url(${(props) => props.$imageUrl});
   background-size: 50px 50px;
   background-position: center;
   background-repeat: no-repeat;
