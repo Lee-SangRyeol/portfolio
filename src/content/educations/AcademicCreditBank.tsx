@@ -11,7 +11,6 @@ import {
   IconBackGround,
   Icon,
 } from "./EducationsStyles";
-import styled from "styled-components";
 
 const AcademicCreditBank = () => {
   return (

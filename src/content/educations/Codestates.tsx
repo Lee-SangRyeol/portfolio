@@ -11,7 +11,7 @@ import {
   IconBackGround,
   Icon,
 } from "./EducationsStyles";
-import styled from "styled-components";
+
 const Codestates = () => {
   return (
     <AllContainer>

@@ -2,17 +2,12 @@ import React, { useState, useEffect } from "react";
 import styled, { keyframes } from "styled-components";
 import { colors } from "../constants/index";
 import Career from "../content/Career";
+import Project from "../content/Project";
 import Education from "../content/Education";
 
 const Section3 = () => {
   const [activeSection, setActiveSection] = useState<string>("");
 
-  // const scrollToSection = (sectionId: string) => {
-  //   const section = document.getElementById(sectionId);
-  //   if (section) {
-  //     section.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // };
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -95,7 +90,7 @@ const Section3 = () => {
           id="project"
           className={activeSection === "project" ? "fade-in" : "fade-out"}
         >
-          <GrayContainer>project</GrayContainer>
+          <Project />
         </Section>
         <Section
           id="education"
@@ -163,10 +158,11 @@ const SidebarItem = styled.div<{ $active: boolean }>`
 
 const Content = styled.div`
   flex-grow: 1;
+  width: calc(100vw-360px);
 `;
 
 const Section = styled.div`
-  width: 100%;
+  width: 1500px;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -181,14 +177,14 @@ const Section = styled.div`
   &.fade-out {
     animation: ${fadeOut} 0.5s ease-out forwards;
   }
-`;
+  @media screen and (max-width: 1800px) {
+    width: 1300px;
+  }
 
-const GrayContainer = styled.div`
-  background-color: ${colors.grayscale.$02};
-  padding: 20px;
-  border-radius: 5px;
-  width: 500px;
-  height: 480px;
-  font-size: 48px;
-  color: ${colors.secondary.white};
+  @media screen and (max-width: 1600px) {
+    width: 1000px;
+  }
+  @media screen and (max-width: 1300px) {
+    width: 800px;
+  }
 `;
