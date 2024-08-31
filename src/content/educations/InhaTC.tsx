@@ -11,8 +11,7 @@ import {
   IconBackGround,
   Icon,
 } from "./EducationsStyles";
-import styled from "styled-components";
-import { colors, fonts } from "../../constants/index";
+
 const InhaTC = () => {
   return (
     <AllContainer>
