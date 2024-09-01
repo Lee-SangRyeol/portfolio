@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../constants/index";
 
-const Section1 = () => {
+const Section4 = () => {
   const [emailText, setEmailText] = useState("Email");
   // 연락처와 이메일 복사 기능
   const copyToClipboard = (text: string) => {
@@ -31,32 +31,24 @@ const Section1 = () => {
       </EmailBox>
       <TopContainer>
         <TextContainer>
-          <BackgroundText>Web-Developer</BackgroundText>
-          <MainTitleText>
-            웹 개발자 <Bold900>이상렬</Bold900> 입니다.
-          </MainTitleText>
+          <BackgroundText>Thank You</BackgroundText>
+          <MainTitleText>봐주셔서 감사합니다 :)</MainTitleText>
           <MainBodyText>
             <Bold900>개인</Bold900>보다 <Bold900>단체</Bold900>가 가진
-            <Bold900> 힘</Bold900>을 믿고
+            <Bold900> 힘</Bold900>을 믿고, 좋은 <Bold900>관계</Bold900>가 좋은{" "}
+            <Bold900>결과</Bold900>를 가져온다고 믿는,
           </MainBodyText>
           <MainBodyText>
-            좋은 <Bold900>관계</Bold900>가 좋은 <Bold900>결과</Bold900>를
-            가져온다고 믿는
-          </MainBodyText>
-          <MainBodyText>
-            <Bold900>함께</Bold900> 일하고 싶은 개발자입니다.
+            <Bold900>함께</Bold900> 일하고 <Bold900>함께</Bold900> 성장하는
+            개발자가 되겠습니다.
           </MainBodyText>
         </TextContainer>
       </TopContainer>
-      <BottomContainer>
-        <Picture />
-      </BottomContainer>
-      <UpdateText>last update : 24.09.01</UpdateText>
     </Container>
   );
 };
 
-export default Section1;
+export default Section4;
 
 const Container = styled.div`
   background-image: url("/images/pngs/배경.png");
@@ -82,64 +74,33 @@ const TextContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 95px;
+  padding-top: 70px;
 `;
 
 const BackgroundText = styled.div`
   position: absolute;
-  top: 0;
-  font-size: 6rem;
-  color: ${colors.grayscale.$04};
+  font-size: 9rem;
+  color: ${colors.grayscale.$02};
   font-weight: 900;
   z-index: 1;
 `;
 
 const MainTitleText = styled.div`
   position: relative;
-  font-size: 3rem;
+  font-size: 4rem;
   color: ${colors.secondary.black};
-  font-weight: 400;
+  padding-top: 180px;
+  font-weight: 600;
   z-index: 2;
 `;
 
 const MainBodyText = styled.div`
-  font-size: 17px;
+  font-size: 20px;
   color: ${colors.secondary.black};
 `;
 
 const Bold900 = styled.a`
   font-weight: 900;
-`;
-
-const BottomContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  height: calc(100vh - 251px);
-`;
-
-const Picture = styled.div`
-  background-image: url("/images/pngs/배경투명흑백.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 100%;
-  /* max-width: 370px;
-  max-height: 100%; */
-`;
-
-const UpdateText = styled.div`
-  position: fixed;
-  bottom: 60px;
-  left: 60px;
-  font-size: 18px;
-  color: ${colors.grayscale.$04};
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  flex-direction: column;
-  z-index: 2;
 `;
 
 const EmailBox = styled.div`

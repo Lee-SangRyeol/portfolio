@@ -127,9 +127,10 @@ const fadeOut = keyframes`
 
 const Container = styled.div`
   width: 100%;
-  height: 522vh;
+  height: 340vh;
   display: flex;
   background-color: ${colors.grayscale.$01};
+  z-index: 30;
 `;
 
 const Sidebar = styled.div`
@@ -141,6 +142,7 @@ const Sidebar = styled.div`
   flex-direction: column;
   padding-left: 40px;
   background-color: ${colors.grayscale.$01};
+  z-index: 30;
 `;
 
 const SidebarItem = styled.div<{ $active: boolean }>`

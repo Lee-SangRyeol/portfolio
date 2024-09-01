@@ -3,6 +3,7 @@ import { colors } from "../constants/index";
 import Section1 from "../sections/Section1";
 import Section2 from "../sections/Section2";
 import Section3 from "../sections/Section3";
+import Section4 from "../sections/Section4";
 
 interface LabelProps {
   $dataLabel: string;
@@ -19,6 +20,7 @@ export default function Home() {
       <Section1 />
       <Section2 />
       <Section3 />
+      <Section4 />
       <ContactContainer>
         <ScrollButton onClick={scrollToTop} $dataLabel="맨 위로">
           ︿
@@ -41,6 +43,7 @@ const ContactContainer = styled.div`
   align-items: flex-end;
   flex-direction: column;
   gap: 20px;
+  z-index: 100;
 `;
 
 const ScrollButton = styled.button<LabelProps>`
@@ -58,6 +61,7 @@ const ScrollButton = styled.button<LabelProps>`
   position: relative;
   transition: transform 0.5s ease-in-out;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  z-index: 100;
 
   &:hover::before {
     opacity: 1;

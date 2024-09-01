@@ -138,6 +138,7 @@ const Container = styled.div`
   padding: 40px 80px 0px 80px;
   position: relative;
   height: 210vh;
+  z-index: 20;
 `;
 
 const TopTitle = styled.div`
