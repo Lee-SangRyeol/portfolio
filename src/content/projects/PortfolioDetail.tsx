@@ -136,24 +136,48 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ onClose }) => {
                 <ImgContainer>
                   <ImgBox>
                     <WorkImg
-                      $imageUrl="/images/pngs/meta1.png"
-                      onClick={() => openImageModal("/images/pngs/meta1.png")}
+                      $imageUrl="/images/pngs/portfolio5.png"
+                      onClick={() =>
+                        openImageModal("/images/pngs/portfolio5.png")
+                      }
                     />
-                    <ImgText>ㄴ 대시보드</ImgText>
+                    <ImgText>ㄴ 메인 홈</ImgText>
                   </ImgBox>
                   <ImgBox>
                     <WorkImg
-                      $imageUrl="/images/pngs/meta2.png"
-                      onClick={() => openImageModal("/images/pngs/meta2.png")}
+                      $imageUrl="/images/pngs/portfolio1.png"
+                      onClick={() =>
+                        openImageModal("/images/pngs/portfolio1.png")
+                      }
                     />
-                    <ImgText>ㄴ 출품작 관리</ImgText>
+                    <ImgText>ㄴ About Me</ImgText>
                   </ImgBox>
                   <ImgBox>
                     <WorkImg
-                      $imageUrl="/images/pngs/meta3.png"
-                      onClick={() => openImageModal("/images/pngs/meta3.png")}
+                      $imageUrl="/images/pngs/portfolio2.png"
+                      onClick={() =>
+                        openImageModal("/images/pngs/portfolio2.png")
+                      }
                     />
-                    <ImgText>ㄴ 일간 리포트</ImgText>
+                    <ImgText>ㄴ Career</ImgText>
+                  </ImgBox>
+                  <ImgBox>
+                    <WorkImg
+                      $imageUrl="/images/pngs/portfolio3.png"
+                      onClick={() =>
+                        openImageModal("/images/pngs/portfolio3.png")
+                      }
+                    />
+                    <ImgText>ㄴ Project</ImgText>
+                  </ImgBox>
+                  <ImgBox>
+                    <WorkImg
+                      $imageUrl="/images/pngs/portfolio4.png"
+                      onClick={() =>
+                        openImageModal("/images/pngs/portfolio4.png")
+                      }
+                    />
+                    <ImgText>ㄴ Education</ImgText>
                   </ImgBox>
                 </ImgContainer>
               </ContentBox>
