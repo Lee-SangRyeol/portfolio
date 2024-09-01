@@ -68,7 +68,7 @@ const AllContainer = styled.div`
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
-  height: 800px;
+  height: 1000px;
   position: relative;
 `;
 

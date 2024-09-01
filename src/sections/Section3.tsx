@@ -12,16 +12,16 @@ const Section3 = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      if (sectionId !== "career") {
-        const offset = section.getBoundingClientRect().top + window.scrollY;
-        const headerOffset = 100;
-        const offsetPosition = offset - headerOffset;
+      // if (sectionId !== "career") {
+      const offset = section.getBoundingClientRect().top + window.scrollY;
+      const headerOffset = 100;
+      const offsetPosition = offset - headerOffset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: "smooth",
-        });
-      }
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      // }
     }
   };
 
@@ -164,7 +164,7 @@ const Content = styled.div`
 
 const Section = styled.div`
   width: 1500px;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   align-items: center;
