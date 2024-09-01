@@ -1,9 +1,34 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { colors } from "../constants/index";
 
 const Section1 = () => {
+  const [emailText, setEmailText] = useState("Email");
+  // 연락처와 이메일 복사 기능
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text);
+    alert(`${text}가 복사 되었습니다.`);
+  };
+
+  // 호버 시작 시 텍스트 변경
+  const handleMouseEnter = () => {
+    setEmailText("tkdfuf7600@gmail.com");
+  };
+
+  // 호버 끝날 시 원래 텍스트로 변경
+  const handleMouseLeave = () => {
+    setEmailText("Email");
+  };
+
   return (
     <Container>
+      <EmailBox
+        onClick={() => copyToClipboard("tkdfuf7600@gmail.com")}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        {emailText}
+      </EmailBox>
       <TopContainer>
         <TextContainer>
           <BackgroundText>Web-Developer</BackgroundText>
@@ -26,6 +51,7 @@ const Section1 = () => {
       <BottomContainer>
         <Picture />
       </BottomContainer>
+      <UpdateText>last update : 24.09.01</UpdateText>
     </Container>
   );
 };
@@ -101,4 +127,49 @@ const Picture = styled.div`
   height: 100%;
   /* max-width: 370px;
   max-height: 100%; */
+`;
+
+const UpdateText = styled.div`
+  position: fixed;
+  bottom: 60px;
+  left: 60px;
+  font-size: 18px;
+  color: ${colors.grayscale.$04};
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  flex-direction: column;
+`;
+
+const EmailBox = styled.div`
+  position: fixed;
+  top: 60px;
+  left: 60px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: ${colors.grayscale.$04};
+  border-left: 8px solid black;
+  cursor: pointer;
+  transition: all 1s ease;
+  z-index: 10;
+
+  &:hover {
+    color: ${colors.grayscale.$04};
+  }
+
+  &:hover::before {
+    width: 100%;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 100%;
+    background-color: ${colors.secondary.black};
+    z-index: -1;
+    transition: width 0.3s ease;
+  }
 `;
