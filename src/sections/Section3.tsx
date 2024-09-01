@@ -140,6 +140,7 @@ const Sidebar = styled.div`
   display: flex;
   flex-direction: column;
   padding-left: 40px;
+  background-color: ${colors.grayscale.$01};
 `;
 
 const SidebarItem = styled.div<{ $active: boolean }>`
