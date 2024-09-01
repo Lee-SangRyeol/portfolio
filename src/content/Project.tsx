@@ -13,10 +13,10 @@ const Project = () => {
   const renderContent = () => {
     const components = [
       { component: <Afun />, type: "Company" },
-      { component: <DontStop />, type: "Side" },
       { component: <Metagallery />, type: "Company" },
       { component: <Portfolio />, type: "Side" },
-      { component: <TailorMadeTrip />, type: "Company" },
+      { component: <DontStop />, type: "Side" },
+      { component: <TailorMadeTrip />, type: "Side" },
     ];
 
     return components
@@ -110,7 +110,7 @@ const ContainerWrapper = styled.div`
 `;
 
 const ChildContainer = styled.div`
-  width: 350px;
+  width: 300px;
   height: 400px;
   flex-shrink: 0;
   display: flex;

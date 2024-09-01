@@ -12,7 +12,7 @@ const Section3 = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      if (sectionId === "education") {
+      if (sectionId !== "career") {
         const offset = section.getBoundingClientRect().top + window.scrollY;
         const headerOffset = 100;
         const offsetPosition = offset - headerOffset;
