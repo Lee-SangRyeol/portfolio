@@ -25,7 +25,7 @@ const Portfolio = () => {
   return (
     <>
       <AllContainer>
-        <MainImg $imageUrl="/images/pngs/portfolioMain.png" />
+        <MainImg $imageUrl="/images/pngs/portfolio5.png" />
         <TextContainer>
           <Title>포트폴리오</Title>
         </TextContainer>
