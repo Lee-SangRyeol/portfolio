@@ -26,7 +26,7 @@ const AcademicCreditBank = () => {
           <GrayText>평생교육원을 통한 학점 이수</GrayText>
         </TextUl>
         <TextUl>
-          <GrayText>24년 11월 필요학점 충족 예정</GrayText>
+          <GrayText>컴퓨터공학 학사 학위 취득</GrayText>
         </TextUl>
       </GreyContainer>
       <IconBackGround>

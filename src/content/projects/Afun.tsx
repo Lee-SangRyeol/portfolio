@@ -27,7 +27,7 @@ const Afun = () => {
       <AllContainer>
         <MainImg $imageUrl="/images/pngs/afunMain.png" />
         <TextContainer>
-          <Title>에이락 월렛 백오피스</Title>
+          <Title>ALock Wallet <br /> Back Office</Title>
         </TextContainer>
         <Body>
           <GrayText>

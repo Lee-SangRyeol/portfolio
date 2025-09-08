@@ -1,9 +1,9 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { colors } from "../constants/index";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { colors } from '../constants/index';
 
 const Section1 = () => {
-  const [emailText, setEmailText] = useState("Email");
+  const [emailText, setEmailText] = useState('Email');
   // 연락처와 이메일 복사 기능
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text);
@@ -12,18 +12,18 @@ const Section1 = () => {
 
   // 호버 시작 시 텍스트 변경
   const handleMouseEnter = () => {
-    setEmailText("tkdfuf7600@gmail.com");
+    setEmailText('tkdfuf7600@gmail.com');
   };
 
   // 호버 끝날 시 원래 텍스트로 변경
   const handleMouseLeave = () => {
-    setEmailText("Email");
+    setEmailText('Email');
   };
 
   return (
     <Container>
       <EmailBox
-        onClick={() => copyToClipboard("tkdfuf7600@gmail.com")}
+        onClick={() => copyToClipboard('tkdfuf7600@gmail.com')}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
@@ -40,8 +40,7 @@ const Section1 = () => {
             <Bold900> 힘</Bold900>을 믿고
           </MainBodyText>
           <MainBodyText>
-            좋은 <Bold900>관계</Bold900>가 좋은 <Bold900>결과</Bold900>를
-            가져온다고 믿는
+            좋은 <Bold900>관계</Bold900>가 좋은 <Bold900>결과</Bold900>를 가져온다고 믿는
           </MainBodyText>
           <MainBodyText>
             <Bold900>함께</Bold900> 일하고 싶은 개발자입니다.
@@ -51,7 +50,7 @@ const Section1 = () => {
       <BottomContainer>
         <Picture />
       </BottomContainer>
-      <UpdateText>last update : 24.09.01</UpdateText>
+      <UpdateText>last update : 25.09.08</UpdateText>
     </Container>
   );
 };
@@ -59,7 +58,7 @@ const Section1 = () => {
 export default Section1;
 
 const Container = styled.div`
-  background-image: url("/images/pngs/배경.png");
+  background-image: url('/images/pngs/배경.png');
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -119,7 +118,7 @@ const BottomContainer = styled.div`
 `;
 
 const Picture = styled.div`
-  background-image: url("/images/pngs/배경투명흑백.png");
+  background-image: url('/images/pngs/배경투명흑백.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -163,7 +162,7 @@ const EmailBox = styled.div`
   }
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     bottom: 0;

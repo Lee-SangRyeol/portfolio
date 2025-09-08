@@ -27,7 +27,7 @@ const Metagallery = () => {
       <AllContainer>
         <MainImg $imageUrl="/images/pngs/metaMain.png" />
         <TextContainer>
-          <Title>마이메타갤러리 백오피스</Title>
+          <Title>My Meta Gallery <br /> Back Office</Title>
         </TextContainer>
         <Body>
           <GrayText>

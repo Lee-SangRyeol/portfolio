@@ -1,29 +1,54 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { colors } from "../constants/index";
-import Afun from "./projects/Afun";
-import DontStop from "./projects/DontStop";
-import Metagallery from "./projects/Metagallery";
-import Portfolio from "./projects/Portfolio";
-import TailorMadeTrip from "./projects/TailorMadeTrip";
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { colors } from '../constants/index';
+import Afun from './projects/Afun';
+import DontStop from './projects/DontStop';
+import Metagallery from './projects/Metagallery';
+import Portfolio from './projects/Portfolio';
+import TailorMadeTrip from './projects/TailorMadeTrip';
+import GuideMe from './projects/Guide-Me';
 
-const Project = () => {
-  const [filter, setFilter] = useState("All");
+interface ProjectProps {
+  onHeightChange?: (height: number) => void;
+}
+
+const Project = ({ onHeightChange }: ProjectProps) => {
+  const [filter, setFilter] = useState('All');
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (containerRef.current && onHeightChange) {
+        const height = containerRef.current.scrollHeight;
+        onHeightChange(height);
+      }
+    };
+
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [onHeightChange, filter]);
 
   const renderContent = () => {
     const components = [
-      { component: <Afun />, type: "Company" },
-      { component: <Metagallery />, type: "Company" },
-      { component: <Portfolio />, type: "Side" },
-      { component: <DontStop />, type: "Side" },
-      { component: <TailorMadeTrip />, type: "Side" },
+      { component: <Afun />, type: 'Company' },
+      { component: <Metagallery />, type: 'Company' },
+      { component: <GuideMe />, type: 'Company' },
+      { component: <Portfolio />, type: 'Side' },
+      { component: <DontStop />, type: 'Side' },
+      { component: <TailorMadeTrip />, type: 'Side' },
     ];
 
     return components
-      .filter((item) => filter === "All" || item.type === filter)
-      .map((item, index) => (
-        <ChildContainer key={index}>{item.component}</ChildContainer>
-      ));
+      .filter(item => filter === 'All' || item.type === filter)
+      .map((item, index) => <ChildContainer key={index}>{item.component}</ChildContainer>);
   };
 
   const handleFilterChange = (newFilter: string) => {
@@ -31,24 +56,15 @@ const Project = () => {
   };
 
   return (
-    <AllContainer>
+    <AllContainer ref={containerRef}>
       <FilterContainer>
-        <FilterButton
-          onClick={() => handleFilterChange("All")}
-          $active={filter === "All"}
-        >
+        <FilterButton onClick={() => handleFilterChange('All')} $active={filter === 'All'}>
           All
         </FilterButton>
-        <FilterButton
-          onClick={() => handleFilterChange("Company")}
-          $active={filter === "Company"}
-        >
+        <FilterButton onClick={() => handleFilterChange('Company')} $active={filter === 'Company'}>
           Company
         </FilterButton>
-        <FilterButton
-          onClick={() => handleFilterChange("Side")}
-          $active={filter === "Side"}
-        >
+        <FilterButton onClick={() => handleFilterChange('Side')} $active={filter === 'Side'}>
           Side
         </FilterButton>
       </FilterContainer>
@@ -85,10 +101,8 @@ const FilterButton = styled.button<FilterButtonProps>`
   padding: 10px 20px;
   border: none;
   border-radius: 50px;
-  background-color: ${({ $active }) =>
-    $active ? colors.grayscale.$10 : colors.grayscale.$02};
-  color: ${({ $active }) =>
-    $active ? colors.secondary.black : colors.secondary.white};
+  background-color: ${({ $active }) => ($active ? colors.grayscale.$10 : colors.grayscale.$02)};
+  color: ${({ $active }) => ($active ? colors.secondary.black : colors.secondary.white)};
   cursor: pointer;
   transition: background-color 0.3s;
   font-size: 14px;

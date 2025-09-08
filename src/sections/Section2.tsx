@@ -103,6 +103,11 @@ const Section2 = () => {
                   <Dash />
                   <SkillToolsText>graphQL</SkillToolsText>
                 </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon $imageUrl="/images/icon/nestjs.svg"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>NestJS</SkillToolsText>
+                </SkillToolsDetailBox>
               </SkillToolsBody>
             </SkillToolsBox>
           </div>
@@ -120,6 +125,11 @@ const Section2 = () => {
                   <SkillToolsIcon $imageUrl="/images/icon/mongo.webp"></SkillToolsIcon>
                   <Dash />
                   <SkillToolsText>MongoDB</SkillToolsText>
+                </SkillToolsDetailBox>
+                <SkillToolsDetailBox>
+                  <SkillToolsIcon $imageUrl="/images/icon/Postgresql.svg"></SkillToolsIcon>
+                  <Dash />
+                  <SkillToolsText>Postgresql</SkillToolsText>
                 </SkillToolsDetailBox>
               </SkillToolsBody>
             </SkillToolsBox>
@@ -237,11 +247,12 @@ const SkillToolsBox = styled.div`
   border: 2px solid white;
   position: relative;
   z-index: 1;
-  width: 310px;
   height: 180px;
   margin-top: -65px;
   margin-left: 5px;
   padding-top: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   justify-content: center;
 `;

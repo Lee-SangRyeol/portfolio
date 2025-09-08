@@ -1,11 +1,37 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { colors } from "../constants/index";
-import InhaTC from "./educations/InhaTC";
-import Codestates from "./educations/Codestates";
-import AcademicCreditBank from "./educations/AcademicCreditBank";
+import React, { useState, useEffect, useRef } from 'react';
+import styled from 'styled-components';
+import { colors } from '../constants/index';
+import InhaTC from './educations/InhaTC';
+import Codestates from './educations/Codestates';
+import AcademicCreditBank from './educations/AcademicCreditBank';
 
-const Education = () => {
+interface EducationProps {
+  onHeightChange?: (height: number) => void;
+}
+
+const Education = ({ onHeightChange }: EducationProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const updateHeight = () => {
+      if (containerRef.current && onHeightChange) {
+        const height = containerRef.current.scrollHeight;
+        onHeightChange(height);
+      }
+    };
+
+    updateHeight();
+
+    const resizeObserver = new ResizeObserver(updateHeight);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [onHeightChange]);
+
   const renderContent = () => {
     const components = [<InhaTC />, <Codestates />, <AcademicCreditBank />];
     return components.map((component, index) => (
@@ -14,7 +40,7 @@ const Education = () => {
   };
 
   return (
-    <AllContainer>
+    <AllContainer ref={containerRef}>
       <ContainerWrapper>{renderContent()}</ContainerWrapper>
     </AllContainer>
   );
@@ -27,7 +53,8 @@ const AllContainer = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 800px;
+  min-height: 800px;
+  height: auto;
   position: relative;
 `;
 
